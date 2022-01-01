@@ -1,25 +1,25 @@
-    // navbar
-    for (const burder of $('.navbar-brand')) {
+for (const burder of document.getElementsByClassName('navbar-burger')) {
+      const menuId = burder.dataset.target;
+      const menu = document.getElementById(menuId);
       burder.addEventListener('click', e => {
         burder.classList.toggle('is-active');
-        $('#' + burder.dataset.target).classList.toggle('is-active');
+        menu.classList.toggle('is-active');
       });
     }
-    // notification
     for (const element of document.querySelectorAll('.notification > .delete')) {
-      element.click(function () {
+      element.addEventListener('click', e => {
         e.target.parentNode.classList.add('is-hidden');
-      })
+      });
     }
-    // message
     for (const element of document.querySelectorAll('.message  .delete')) {
-      element.click(function () {
+      element.addEventListener('click', e => {
         e.target.parentNode.parentNode.classList.add('is-hidden');
       });
     }
-    // modal
     for (const element of document.querySelectorAll('.modal .delete, .show-modal')) {
-      element.click(function () {
-        $('#' + element.dataset.target).classList.toggle('is-active');
+      element.addEventListener('click', e => {
+        const modalId = element.dataset.target;
+        const modal = document.getElementById(modalId);
+        modal.classList.toggle('is-active');
       });
     }
