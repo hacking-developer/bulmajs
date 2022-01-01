@@ -16,7 +16,7 @@ for (const burder of document.getElementsByClassName('navbar-burger')) {
         e.target.parentNode.parentNode.classList.add('is-hidden');
       });
     }
-    for (const element of document.querySelectorAll('.modal .delete, .show-modal')) {
+    for (const element of document.querySelectorAll('.modal .delete, .show-modal ._delete')) {
       element.addEventListener('click', e => {
         const modalId = element.dataset.target;
         const modal = document.getElementById(modalId);
